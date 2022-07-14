@@ -1,3 +1,7 @@
+let playerChoice = prompt("Rock, Paper, or Scissors?").toLowerCase();
+playerChoice = playerChoice.replace(playerChoice[0], playerChoice[0].toUpperCase());
+
+
 const computerPlay = () => {
     let computerChoice = null;
     switch (Math.floor(Math.random() * 3) + 1){
@@ -13,3 +17,25 @@ const computerPlay = () => {
     }
     return computerChoice;
 }
+
+
+const round = (playerChoice, computerPlay) => {
+    if(playerChoice === "rock" && computerPlay === "scissors"){
+        console.log("You win! Rock beats scissors.");
+    }
+    else if(playerChoice === "paper" && computerPlay === "rock"){
+        console.log("You win! Paper beats rock.");
+    }
+    else if(playerChoice === "scissors" && computerPlay === "paper"){
+        console.log("You win! Scissors beats paper.");
+    }
+    else if(playerChoice === computerPlay){
+        console.log("Tie!");
+    }
+    else {
+        console.log("You lose!");
+    }
+}
+
+
+round(playerChoice, computerPlay());
