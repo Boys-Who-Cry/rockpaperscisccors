@@ -1,7 +1,3 @@
-let playerChoice = prompt("Rock, Paper, or Scissors?").toLowerCase();
-playerChoice = playerChoice.replace(playerChoice[0], playerChoice[0].toUpperCase());
-
-
 const computerPlay = () => {
     let computerChoice = null;
     switch (Math.floor(Math.random() * 3) + 1){
@@ -37,5 +33,12 @@ const round = (playerChoice, computerPlay) => {
     }
 }
 
+const game = () => {
+    let playerChoice = prompt("Rock, Paper, or Scissors?").toLowerCase();
+    playerChoice = playerChoice.replace(playerChoice[0], playerChoice[0].toUpperCase());
+    round(playerChoice, computerPlay());
+}
 
-round(playerChoice, computerPlay());
+for(let i = 0; i < 5; i++){
+    game();
+}
